@@ -10025,3 +10025,18 @@ a.text-dark:hover, a.text-dark:focus {
     color: #ccc;
     content: "/ ";
 }
+
+/* Footer styling */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 15px 0;
+}
+

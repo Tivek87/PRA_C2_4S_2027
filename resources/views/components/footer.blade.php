@@ -1,7 +1,7 @@
 
 <footer>
     <div class="container">
-        © {{ __('misc.copyright') }}
+        © {{ __('misc.copyright') }} | <a href="/contact" class="text-white">Contact</a>
     </div>
 </footer>
 

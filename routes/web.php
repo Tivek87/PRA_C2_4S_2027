@@ -47,6 +47,23 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
+// Contactpagina
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+
+Route::post('/contact', function (\Illuminate\Http\Request $request) {
+    $inhoud = "Datum: " . date('Y-m-d H:i:s') . "\n"
+            . "Naam: " . $request->input('name') . "\n"
+            . "Email: " . $request->input('email') . "\n"
+            . "Bericht: " . $request->input('message') . "\n"
+            . "----------------------------------------\n\n";
+
+    file_put_contents(storage_path('contact_berichten.txt'), $inhoud, FILE_APPEND);
+
+    return back()->with('success', 'Bedankt voor je bericht! We hebben het ontvangen.');
+});
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 

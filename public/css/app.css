@@ -10040,3 +10040,10 @@ footer {
     padding: 15px 0;
 }
 
+/* Ticket 2: Zorg dat containers netjes in het midden staan */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

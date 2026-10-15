@@ -13,6 +13,14 @@
         </x-slot:title>
     </h1>
 
+    <div class="letter-menu my-3">
+        <p class="mb-1"><strong>Ga naar letter:</strong></p>
+        <p>
+            @foreach(range('A', 'Z') as $letter)
+                <a href="#letter-{{ $letter }}">{{ $letter }}</a>@if(!$loop->last) - @endif
+            @endforeach
+        </p>
+    </div>
 
     <?php
     $size = count($brands);
@@ -35,7 +43,7 @@
 
                             if (!isset($header_first_letter) || (isset($header_first_letter) && $current_first_letter != $header_first_letter)) {
                                 echo '</ul>
-						<h2>' . $current_first_letter . '</h2>
+						<h2 id="letter-' . $current_first_letter . '">' . $current_first_letter . '</h2>
 						<ul>';
                             }
                             $header_first_letter = $current_first_letter

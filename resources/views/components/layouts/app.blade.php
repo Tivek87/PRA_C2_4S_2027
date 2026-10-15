@@ -11,7 +11,7 @@
     <div class="row">
 
         <div class="col-12">
-            <x-header/>
+            <x-header :introduction_text="$introduction_text ?? null"/>
 
             <ul class="breadcrumb">
                 <li><a href="/" title="{{ __('misc.home_alt') }}"

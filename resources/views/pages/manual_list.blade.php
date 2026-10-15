@@ -17,10 +17,10 @@
         @foreach ($manuals as $manual)
 
             @if ($manual->locally_available)
-                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
+                <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" class="btn btn-outline-primary btn-sm my-1" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
                 ({{$manual->filesize_human_readable}})
             @else
-                <a href="{{ $manual->url }}" target="new" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
+                <a href="{{ $manual->url }}" target="_blank" class="btn btn-outline-primary btn-sm my-1" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
             @endif
 
             <br />

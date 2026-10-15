@@ -12,13 +12,17 @@
 
     <h1>{{ $brand->name }} - {{ $type->name }}</h1>
 
+    <div class="my-3">
+        <a href="{{ $manual->url }}" target="_blank" class="btn btn-primary btn-lg" alt="{{ __('misc.download_manual_alt') }}" title="{{ __('misc.download_manual_alt') }}">
+            {{ __('misc.download_manual') }}
+        </a>
+    </div>
+
     @if ($manual->locally_available)
-        <iframe src="{{ $manual->url }}" width="780" height="600" frameborder="0" marginheight="0" marginwidth="0">
+        <iframe src="{{ $manual->url }}" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">
         Iframes are not supported<br />
-        <a href="{{ $manual->url }}" target="new" alt="Download your manual here" title="Download your manual here">Click here to download the manual</a>
+        <a href="{{ $manual->url }}" target="_blank" class="btn btn-primary" alt="{{ __('misc.download_manual_alt') }}" title="{{ __('misc.download_manual_alt') }}">{{ __('misc.download_manual') }}</a>
         </iframe>
-    @else
-        <a href="{{ $manual->url }}" target="new" alt="Download your manual here" title="Download your manual here">Click here to download the manual</a>
     @endif
 
 </x-layouts.app>

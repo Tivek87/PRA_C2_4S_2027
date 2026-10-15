@@ -10058,5 +10058,32 @@ footer {
     border-color: #004085;
 }
 
+/* Ticket 3: Tekst in het bovenste vak groter en dikker */
+.jumbotron p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Ticket 3: Merkenlijst een achtergrondkleur geven */
+.brands-container {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Ticket 3: Merken-links niet meer standaard blauw */
+.brands-container a {
+    color: #343a40;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brands-container a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+
 
 

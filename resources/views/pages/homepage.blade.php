@@ -19,7 +19,7 @@
     $chunk_size = ceil($size / $columns);
     ?>
 
-    <div class="container">
+    <div class="brands-container">
         <!-- Example row of columns -->
         <div class="row">
 

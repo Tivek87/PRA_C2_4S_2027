@@ -64,6 +64,17 @@ Route::post('/contact', function (\Illuminate\Http\Request $request) {
     return back()->with('success', 'Bedankt voor je bericht! We hebben het ontvangen.');
 });
 
+// Merken per letter voor SEO (Ticket 16)
+Route::get('/{letter}', function ($letter) {
+    $letter = strtoupper($letter);
+    $brands = Brand::where('name', 'LIKE', $letter . '%')->orderBy('name')->get();
+
+    return view('pages.brands_by_letter', [
+        'letter' => $letter,
+        'brands' => $brands,
+    ]);
+})->where('letter', '[A-Za-z]');
+
 Route::get('/manual/{language}/{brand_slug}/', [RedirectController::class, 'brand']);
 Route::get('/manual/{language}/{brand_slug}/brand.html', [RedirectController::class, 'brand']);
 
